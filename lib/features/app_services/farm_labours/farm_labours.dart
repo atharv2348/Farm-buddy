@@ -22,8 +22,8 @@ class FarmLabours extends StatelessWidget {
                 itemBuilder: (context, index) {
                   if (snapshot.hasData) {
                     return ListTile(
-                      title: Text(data[index]["animal_type"]),
-                      subtitle: Text(data[index]["description"]),
+                      title: Text(data[index]["username"]),
+                      subtitle: Text(data[index]["gender"]),
                     );
                   } else if (snapshot.hasError) {
                     return const Text("Error");

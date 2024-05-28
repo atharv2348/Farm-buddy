@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:krishi_vikas/features/app_services/Equipment/add_equipment_record.dart';
 import 'package:krishi_vikas/features/app_services/Equipment/equipment.dart';
@@ -58,6 +59,13 @@ class _HomePageState extends State<HomePage> {
     const Equipment(),
   ];
 
+  List<Widget> carouselItems = [
+    Image.asset('assets/images/img1.jpg'),
+    Image.asset('assets/images/img2.jpg'),
+    Image.asset('assets/images/img3.jpg'),
+    Image.asset('assets/images/img4.jpg'),
+  ];
+
   void logout() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.remove("token");
@@ -74,6 +82,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       drawer: Drawer(
         child: Column(
@@ -269,22 +278,44 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5),
-          itemCount: services.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => servicesList[index]));
-              },
-              child:
-                  customCard(services[index], "assets/images/${index + 1}.png"),
-            );
-          },
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            CarouselSlider(
+              items: carouselItems,
+              options: CarouselOptions(
+                height:
+                    size.height * 0.3, // Customize the height of the carousel
+                autoPlay: true, // Enable auto-play
+                enlargeCenterPage: true, // Increase the size of the center item
+                enableInfiniteScroll: true, // Enable infinite scroll
+                onPageChanged: (index, reason) {
+                  // Optional callback when the page changes
+                  // You can use it to update any additional UI components
+                },
+              ),
+            ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5),
+                itemCount: services.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => servicesList[index]));
+                    },
+                    child: customCard(
+                        services[index], "assets/images/${index + 1}.png"),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

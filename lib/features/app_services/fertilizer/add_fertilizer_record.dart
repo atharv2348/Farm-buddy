@@ -174,12 +174,12 @@ class _AddFertilizerRecordState extends State<AddFertilizerRecord> {
                         backgroundColor: Colors.green,
                         behavior: SnackBarBehavior.floating,
                         content: Text("Record added successfully")));
+                    Navigator.pop(context);
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        backgroundColor: Colors.green,
+                        backgroundColor: Colors.red,
                         behavior: SnackBarBehavior.floating,
                         content: Text("Error occured while adding record!")));
-
                   }
                 },
               ),

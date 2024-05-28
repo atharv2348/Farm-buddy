@@ -133,6 +133,12 @@ class _AddEquipmentRecordState extends State<AddEquipmentRecord> {
                   obsecureText: false,
                   prefixIcon: const Icon(Icons.animation)),
               SizedBox(height: 15.h),
+              MyTextField(
+                  controller: deliveryStatusController,
+                  hintText: "Delivary Status",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
               Container(
                 // height: 100.h,
                 padding: const EdgeInsets.all(20),
@@ -189,7 +195,10 @@ class _AddEquipmentRecordState extends State<AddEquipmentRecord> {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         backgroundColor: Colors.green,
                         behavior: SnackBarBehavior.floating,
-                        content: Text("Record add successfully")));
+                        content: Text("Record added successfully")));
+                        Navigator.pop(context);
+                  } else {
+
                   }
                 },
               ),

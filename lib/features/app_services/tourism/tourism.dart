@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:krishi_vikas/features/app_services/animal_husbandry/animal_services.dart';
+import 'package:krishi_vikas/features/app_services/tourism/tourism_services.dart';
 import 'package:krishi_vikas/utils/colors.dart';
 
 class Tourism extends StatelessWidget {
@@ -11,7 +11,7 @@ class Tourism extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: const Text("Tourism")),
         body: FutureBuilder(
-          future: AnimalServices().getAllAnimalRecords(),
+          future: TourismServices().getAllTourismRecords(),
           builder: (context, snapshot) {
             List data = snapshot.data;
             if (snapshot.connectionState == ConnectionState.waiting) {
@@ -22,7 +22,7 @@ class Tourism extends StatelessWidget {
                 itemBuilder: (context, index) {
                   if (snapshot.hasData) {
                     return ListTile(
-                      title: Text(data[index]["animal_type"]),
+                      title: Text(data[index]["farm_name"]),
                       subtitle: Text(data[index]["description"]),
                     );
                   } else if (snapshot.hasError) {

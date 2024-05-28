@@ -12,7 +12,7 @@ class FertilizerServices {
       String coverage,
       String about,
       String price,
-      String brand, 
+      String brand,
       String item_form,
       String specific_users) async {
     print("--- addRecord function is called ---");
@@ -27,13 +27,13 @@ class FertilizerServices {
           data: {
             "photo_url": url,
             "name": name,
-            "weight": weight,
+            "item_weight": weight,
             "coverage": coverage,
-            "about": about,
+            "about_this_item": about,
             "price": price,
             "brand": brand,
             "item_form": item_form,
-            "specific_users": specific_users,
+            "specific_users": specific_users
           },
           options: Options(headers: {"Authorization": token}));
 

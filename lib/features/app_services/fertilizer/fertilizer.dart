@@ -41,7 +41,7 @@ class Fertilizer extends StatelessWidget {
                   if (snapshot.hasData) {
                     return ListTile(
                         title: Text(data[index]["name"]),
-                        subtitle: Text(data[index]["about"]));
+                        subtitle: Text(data[index]["brand"]));
                   } else if (snapshot.hasError) {
                     return const Text("Error");
                   } else {

@@ -189,7 +189,7 @@ class _AddGrainsRecordState extends State<AddGrainsRecord> {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         backgroundColor: Colors.green,
                         behavior: SnackBarBehavior.floating,
-                        content: Text("Record add successfully")));
+                        content: Text("Record added successfully")));
                     Navigator.pop(context);
                   }
                 },

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:krishi_vikas/features/app_services/animal_husbandry/animal_services.dart';
 import 'package:krishi_vikas/features/app_services/soil_analysis/soil_analysis_services.dart';
 import 'package:krishi_vikas/utils/colors.dart';
 
@@ -23,8 +22,8 @@ class SoilAnalysis extends StatelessWidget {
                 itemBuilder: (context, index) {
                   if (snapshot.hasData) {
                     return ListTile(
-                      title: Text(data[index]["animal_type"]),
-                      subtitle: Text(data[index]["description"]),
+                      title: Text(data[index]["organization"]),
+                      subtitle: Text(data[index]["name"]),
                     );
                   } else if (snapshot.hasError) {
                     return const Text("Error");

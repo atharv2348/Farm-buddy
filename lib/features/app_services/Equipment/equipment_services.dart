@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:krishi_vikas/utils/api.dart';
-import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class EquipmentServices {
   Dio dio = Dio();
 
   Future<bool> addRecord(
-      String file,
+      String url,
       String name,
       String material,
       String location,
@@ -23,6 +22,19 @@ class EquipmentServices {
     // String token = prefs.getString("token")!;
     String token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF0aGFydmMyMDIyQGdtYWlsLmNvbSIsIm5hbWUiOiJBdGhhcnYiLCJfaWQiOiI2NjQ5YjQyNWY2NDhlMzgwOWVkOTYxNDMiLCJhZGRyZXNzIjoiOTQyMjMyNDkwMyIsImlhdCI6MTcxNjg1NTgyNywiZXhwIjoxNzE5NDQ3ODI3fQ.ENL-4Kl38ATfyE5BCx9Y2QRoE_JLxyNh4eebWqG0DAg";
+
+    print("""
+    url $url
+    name $name
+    material $material 
+    location $location
+    description $description
+    price $price
+    brand $brand
+    weight $weight
+    contact $contact
+    delivery_status $delivery_status
+ """);
 
     try {
       Response response = await dio.post("${base_url}equipment/",

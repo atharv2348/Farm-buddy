@@ -30,7 +30,7 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
   final TextEditingController availablity = TextEditingController();
   final TextEditingController service_area = TextEditingController();
 
-  File? _photo;
+   File? _photo;
   String? url;
   final ImagePicker _picker = ImagePicker();
 
@@ -73,7 +73,7 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
       return "error";
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -204,26 +204,6 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
                   // upload image on firebase and store the url
                   String url = await uploadFile();
                   print("***** $url");
-                  print("-------------------------");
-
-                  print("""
-                    username:    ${username.text.trim()},
-                    aadhar_no:    ${aadhar_no.text.trim()},
-                    email:   ${email.text.trim()},
-                    phone:   ${phone.text.trim()},
-                    date:     ${date_of_birth.text.trim()},
-                    gender:   ${gender.text.trim()},
-                    url:  $url,
-                    city:    ${city.text.trim()},
-                    state:  ${state.text.trim()},
-                    years:    ${years_of_exp.text.trim()},
-                    spcialization:  ${specialization.text.trim()},
-                    daily_Wage:   ${daily_wage.text.trim()},
-                    monthly_wage:   ${monthly_wage.text.trim()},
-                    availability:   ${availablity.text.trim()},
-                    service_area:   ${service_area.text.trim()},""");
-
-                  print("-------------------------");
 
                   bool status = await FarmLaboursServices().addRecord(
                     username.text.trim(),

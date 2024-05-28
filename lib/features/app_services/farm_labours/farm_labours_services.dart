@@ -24,6 +24,27 @@ class FarmLaboursServices {
       String service_area) async {
     print("--- addRecord function is called --- ");
 
+    print("-------------------------");
+
+    print("""
+                    username:    $username,
+                    aadhar_no:    $aadhar_no,
+                    email:   $email,
+                    phone:   $phone,
+                    date:     $date_of_birth,
+                    gender:   $gender,
+                    url:  $url,
+                    city:    $city,
+                    state:  $state,
+                    years:    $years_of_exp,
+                    spcialization:  $specialization,
+                    daily_Wage:   $daily_wage,
+                    monthly_wage:   $monthly_wage,
+                    availability:   $availability,
+                    service_area:   $service_area,""");
+
+    print("-------------------------");
+
     SharedPreferences prefs = await SharedPreferences.getInstance();
     // String token = prefs.getString("token")!;
     String token =
@@ -38,7 +59,7 @@ class FarmLaboursServices {
             "phone": phone,
             "date_of_birth": date_of_birth,
             "gender": gender,
-            "photo_url": url,
+            "photo_url": url.toString(),
             "city": city,
             "state": state,
             "years_of_experience": years_of_exp,

@@ -120,12 +120,6 @@ class _AddSoilAnalysisRecordState extends State<AddSoilAnalysisRecord> {
                   prefixIcon: const Icon(Icons.animation)),
               SizedBox(height: 15.h),
               MyTextField(
-                  controller: zip,
-                  hintText: "Zip",
-                  obsecureText: false,
-                  prefixIcon: const Icon(Icons.animation)),
-              SizedBox(height: 15.h),
-              MyTextField(
                   controller: country,
                   hintText: "Country",
                   obsecureText: false,
@@ -187,7 +181,7 @@ class _AddSoilAnalysisRecordState extends State<AddSoilAnalysisRecord> {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         backgroundColor: Colors.green,
                         behavior: SnackBarBehavior.floating,
-                        content: Text("Record add successfully")));
+                        content: Text("Record added successfully")));
                     Navigator.pop(context);
                   }
                 },
