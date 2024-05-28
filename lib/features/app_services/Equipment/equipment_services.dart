@@ -36,14 +36,14 @@ class EquipmentServices {
             "brand": brand,
             "weight": weight,
             "contact": contact,
-            "delivery_status": delivery_status,
+            "delivery_status": delivery_status
           },
           options: Options(headers: {"Authorization": token}));
 
       print(
           "Response statuscode : ${response.statusCode}  Response Data : ${response.data}");
       return true;
-    } catch (e) {
+    } on DioException catch (e) {
       print(e);
       return false;
       // throw Exception(e);

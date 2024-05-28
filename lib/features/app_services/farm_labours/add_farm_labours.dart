@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:krishi_vikas/components/my_buttons.dart';
 import 'package:krishi_vikas/components/my_text_field.dart';
-import 'package:krishi_vikas/features/app_services/animal_husbandry/animal_services.dart';
+import 'package:krishi_vikas/features/app_services/farm_labours/farm_labours_services.dart';
 import 'package:path/path.dart';
 
 class AddFarmLaoursRecords extends StatefulWidget {
@@ -15,12 +15,20 @@ class AddFarmLaoursRecords extends StatefulWidget {
 }
 
 class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
-  final TextEditingController animalTypeController = TextEditingController();
-  final TextEditingController weightController = TextEditingController();
-  final TextEditingController descriptionController = TextEditingController();
-  final TextEditingController colorController = TextEditingController();
-  final TextEditingController priceController = TextEditingController();
-  final TextEditingController locationController = TextEditingController();
+  final TextEditingController username = TextEditingController();
+  final TextEditingController aadhar_no = TextEditingController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController phone = TextEditingController();
+  final TextEditingController date_of_birth = TextEditingController();
+  final TextEditingController gender = TextEditingController();
+  final TextEditingController city = TextEditingController();
+  final TextEditingController state = TextEditingController();
+  final TextEditingController years_of_exp = TextEditingController();
+  final TextEditingController specialization = TextEditingController();
+  final TextEditingController daily_wage = TextEditingController();
+  final TextEditingController monthly_wage = TextEditingController();
+  final TextEditingController availablity = TextEditingController();
+  final TextEditingController service_area = TextEditingController();
 
   File? _photo;
   String? url;
@@ -81,38 +89,86 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
             children: [
               SizedBox(height: 10.h),
               MyTextField(
-                  controller: animalTypeController,
-                  hintText: "Animal Type",
+                  controller: username,
+                  hintText: "Username",
                   obsecureText: false,
                   prefixIcon: const Icon(Icons.animation)),
               SizedBox(height: 15.h),
               MyTextField(
-                  controller: weightController,
-                  hintText: "Weight",
+                  controller: aadhar_no,
+                  hintText: "Aadhar number",
                   obsecureText: false,
                   prefixIcon: const Icon(Icons.animation)),
               SizedBox(height: 15.h),
               MyTextField(
-                  controller: descriptionController,
-                  hintText: "Decription",
+                  controller: email,
+                  hintText: "Email",
                   obsecureText: false,
                   prefixIcon: const Icon(Icons.animation)),
               SizedBox(height: 15.h),
               MyTextField(
-                  controller: colorController,
-                  hintText: "Color",
+                  controller: phone,
+                  hintText: "Phone",
                   obsecureText: false,
                   prefixIcon: const Icon(Icons.animation)),
               SizedBox(height: 15.h),
               MyTextField(
-                  controller: priceController,
-                  hintText: "Price",
+                  controller: date_of_birth,
+                  hintText: "Date of Birth",
                   obsecureText: false,
                   prefixIcon: const Icon(Icons.animation)),
               SizedBox(height: 15.h),
               MyTextField(
-                  controller: locationController,
-                  hintText: "Location",
+                  controller: gender,
+                  hintText: "Gender",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
+              MyTextField(
+                  controller: city,
+                  hintText: "City",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
+              MyTextField(
+                  controller: state,
+                  hintText: "State",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
+              MyTextField(
+                  controller: years_of_exp,
+                  hintText: "Years of Experience",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
+              MyTextField(
+                  controller: specialization,
+                  hintText: "Specializtion",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
+              MyTextField(
+                  controller: daily_wage,
+                  hintText: "Daily Wage",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
+              MyTextField(
+                  controller: monthly_wage,
+                  hintText: "Monthly wage",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
+              MyTextField(
+                  controller: availablity,
+                  hintText: "Availability",
+                  obsecureText: false,
+                  prefixIcon: const Icon(Icons.animation)),
+              SizedBox(height: 15.h),
+              MyTextField(
+                  controller: service_area,
+                  hintText: "Service Area",
                   obsecureText: false,
                   prefixIcon: const Icon(Icons.animation)),
               SizedBox(height: 15.h),
@@ -145,14 +201,43 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
                   // upload image on firebase and store the url
                   String url = await uploadFile();
                   print("***** $url");
-                  bool status = await AnimalServices().addRecord(
-                      url,
-                      animalTypeController.text.trim(),
-                      weightController.text.trim(),
-                      descriptionController.text.trim(),
-                      priceController.text.trim(),
-                      colorController.text.trim(),
-                      locationController.text.trim());
+                  print("-------------------------");
+
+                  print("""    ${username.text.trim()},
+                    ${aadhar_no.text.trim()},
+                    ${email.text.trim()},
+                    ${phone.text.trim()},
+                    ${date_of_birth.text.trim()},
+                    ${gender.text.trim()},
+                    ${url},
+                    ${city.text.trim()},
+                    ${state.text.trim()},
+                    ${years_of_exp.text.trim()},
+                    ${specialization.text.trim()},
+                    ${daily_wage.text.trim()},
+                    ${monthly_wage.text.trim()},
+                    ${availablity.text.trim()},
+                    ${service_area.text.trim()},""");
+
+                  print("-------------------------");
+
+                  bool status = await FarmLaboursServices().addRecord(
+                    username.text.trim(),
+                    aadhar_no.text.trim(),
+                    email.text.trim(),
+                    phone.text.trim(),
+                    date_of_birth.text.trim(),
+                    gender.text.trim(),
+                    url,
+                    city.text.trim(),
+                    state.text.trim(),
+                    years_of_exp.text.trim(),
+                    specialization.text.trim(),
+                    daily_wage.text.trim(),
+                    monthly_wage.text.trim(),
+                    availablity.text.trim(),
+                    service_area.text.trim(),
+                  );
                   if (status) {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         backgroundColor: Colors.green,
