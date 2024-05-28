@@ -76,7 +76,7 @@ class _AddEquipmentRecordState extends State<AddEquipmentRecord> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
-        title: const Text("Animal Husbandry"),
+        title: const Text("Add Equipement Record"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

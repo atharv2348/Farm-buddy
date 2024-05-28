@@ -73,7 +73,7 @@ class _AddFertilizerRecordState extends State<AddFertilizerRecord> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
-        title: const Text("Animal Husbandry"),
+        title: const Text("Add Fertlizer Record"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

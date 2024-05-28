@@ -3,12 +3,20 @@ import 'package:krishi_vikas/features/app_services/Equipment/add_equipment_recor
 import 'package:krishi_vikas/features/app_services/Equipment/equipment.dart';
 import 'package:krishi_vikas/features/app_services/animal_husbandry/add_animal_record.dart';
 import 'package:krishi_vikas/features/app_services/animal_husbandry/animal_husbandry.dart';
+import 'package:krishi_vikas/features/app_services/farm_labours/add_farm_labours.dart';
+import 'package:krishi_vikas/features/app_services/farm_labours/farm_labours.dart';
 import 'package:krishi_vikas/features/app_services/fertilizer/add_fertilizer_record.dart';
 import 'package:krishi_vikas/features/app_services/fertilizer/fertilizer.dart';
 import 'package:krishi_vikas/features/app_services/grains/add_grains_records.dart';
+import 'package:krishi_vikas/features/app_services/grains/grains.dart';
+import 'package:krishi_vikas/features/app_services/soil_analysis/add_soil_analysis_records.dart';
+import 'package:krishi_vikas/features/app_services/soil_analysis/soil_analysis.dart';
 import 'package:krishi_vikas/features/app_services/tourism/add_tourism_records.dart';
+import 'package:krishi_vikas/features/app_services/tourism/tourism.dart';
 import 'package:krishi_vikas/features/app_services/vehicle_rent/add_vehicle_rent_records.dart';
+import 'package:krishi_vikas/features/app_services/vehicle_rent/vehicle_rent.dart';
 import 'package:krishi_vikas/features/app_services/veterinarian/add_veterianarian_records.dart';
+import 'package:krishi_vikas/features/app_services/veterinarian/viterinary.dart';
 import 'package:krishi_vikas/features/auth/pages/login_or_register.dart';
 import 'package:krishi_vikas/utils/colors.dart';
 import 'package:page_transition/page_transition.dart';
@@ -38,15 +46,15 @@ class _HomePageState extends State<HomePage> {
   ];
 
   List servicesList = [
+    const Veterianarian(),
+    const VehicleRent(),
     const Equipment(),
-    const Equipment(),
-    const Equipment(),
-    const Equipment(),
+    const FarmLabours(),
     const AnimalHusbandry(),
-    const Equipment(),
-    const Equipment(),
-    const Equipment(),
-    const Equipment(),
+    const Grains(),
+    const Fertilizer(),
+    const SoilAnalysis(),
+    const Tourism(),
     const Equipment(),
   ];
 
@@ -137,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => AddVeterianarianRecord()));
+                          builder: (context) => AddFarmLaoursRecords()));
                 },
                 leading: const Icon(Icons.equalizer_outlined),
                 title: const Text("Farm Labours"),
@@ -186,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => AddVeterianarianRecord()));
+                          builder: (context) => AddSoilAnalysisRecord()));
                 },
                 leading: const Icon(Icons.equalizer_outlined),
                 title: const Text("Soil Analysis"),

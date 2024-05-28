@@ -76,7 +76,7 @@ class _AddTourismRecordState extends State<AddTourismRecord> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
-        title: const Text("Animal Husbandry"),
+        title: const Text("Add Tourism record"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

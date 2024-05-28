@@ -75,7 +75,7 @@ class _AddGrainsRecordState extends State<AddGrainsRecord> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
-        title: const Text("Grains"),
+        title: const Text("Add Grains Records"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

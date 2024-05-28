@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:krishi_vikas/features/app_services/animal_husbandry/animal_services.dart';
 import 'package:krishi_vikas/features/app_services/grains/grains_services.dart';
 import 'package:krishi_vikas/utils/colors.dart';
 
-class AnimalHusbandry extends StatelessWidget {
-  const AnimalHusbandry({super.key});
+class Grains extends StatelessWidget {
+  const Grains({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Animal Husbandry")),
+        appBar: AppBar(title: const Text("Grains")),
         body: FutureBuilder(
           future: GrainServices().getAllGrainRecords(),
           builder: (context, snapshot) {

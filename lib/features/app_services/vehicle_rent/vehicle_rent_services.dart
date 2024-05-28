@@ -36,30 +36,31 @@ class VehicleRentServices {
     try {
       Response response = await dio.post("${base_url}transport/",
           data: {
-            {
-              "username": username,
-              "aadhar_number": aadhar_number,
-              "email": email,
-              "phone": phone,
-              "date_of_birth": date_of_birth,
-              "gender": gender,
-              "description": description,
-              "street_address": street_address,
-              "city": city,
-              "state": state,
-              "country": country,
-              "zip": zip,
-              "pricing_model": pricing_model,
-              "price": price,
-              "open_from": open_from,
-              "open_to": open_to,
-              "open_time": open_time,
-              "closing_time": closing_time,
-              "service_area": service_area,
-              "photo_url": photo_url
-            }
+            "username": username,
+            "aadhar_number": aadhar_number,
+            "email": email,
+            "phone": phone,
+            "date_of_birth": date_of_birth,
+            "gender": gender,
+            "description": description,
+            "street_address": street_address,
+            "city": city,
+            "state": state,
+            "country": country,
+            "zip": zip,
+            "pricing_model": pricing_model,
+            "price": price,
+            "open_from": open_from,
+            "open_to": open_to,
+            "open_time": open_time,
+            "closing_time": closing_time,
+            "service_area": service_area,
+            "photo_url": photo_url
           },
-          options: Options(headers: {"Authorization": token}));
+          options: Options(headers: {
+            "Authorization": token,
+            // "content-type": "application/json"
+          }));
 
       print(
           "Response statuscode : ${response.statusCode}  Response Data : ${response.data}");

@@ -9,7 +9,7 @@ class Veterianarian extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Animal Husbandry")),
+        appBar: AppBar(title: const Text("Veterianarian")),
         body: FutureBuilder(
           future: VeterinarianServices().getAllVeterinarianRecords(),
           builder: (context, snapshot) {
@@ -22,8 +22,8 @@ class Veterianarian extends StatelessWidget {
                 itemBuilder: (context, index) {
                   if (snapshot.hasData) {
                     return ListTile(
-                      title: Text(data[index]["animal_type"]),
-                      subtitle: Text(data[index]["description"]),
+                      title: Text(data[index]["clinic_name"]),
+                      subtitle: Text(data[index]["clinic_address"]),
                     );
                   } else if (snapshot.hasError) {
                     return const Text("Error");
