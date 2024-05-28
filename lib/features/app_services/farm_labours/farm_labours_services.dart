@@ -23,22 +23,6 @@ class FarmLaboursServices {
       String availability,
       String service_area) async {
     print("--- addRecord function is called --- ");
-    print("""
-       ${username}
-       ${aadhar_no}
-       ${email}
-       ${phone}
-       ${date_of_birth}
-       ${gender}
-       ${photo_url}
-       ${city}
-       ${state}
-       ${years_of_exp}
-       ${specialization}
-       ${daily_wage}
-       ${monthly_wage}
-       ${availability}
-       ${service_area}""");
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
     // String token = prefs.getString("token")!;

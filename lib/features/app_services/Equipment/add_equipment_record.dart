@@ -162,6 +162,18 @@ class _AddEquipmentRecordState extends State<AddEquipmentRecord> {
                   // upload image on firebase and store the url
                   String url = await uploadFile();
                   print("***** $url");
+                  print("""
+                  $url,
+                      ${nameController.text.trim()},
+                      ${materialController.text.trim()},
+                      ${locationController.text.trim()},
+                      ${descriptionController.text.trim()},
+                      ${priceController.text.trim()},
+                      ${brandController.text.trim()},
+                      ${weightController.text.trim()},
+                      ${contactController.text.trim()},
+                      ${deliveryStatusController.text.trim()}
+                  """);
                   bool status = await EquipmentServices().addRecord(
                       url,
                       nameController.text.trim(),

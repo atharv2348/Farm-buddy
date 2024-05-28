@@ -77,7 +77,10 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        print("asdasdasdad");
+        // print("${username.text}");
+      }),
       appBar: AppBar(
         title: const Text("Add Farm Labours Records"),
         centerTitle: true,
@@ -203,21 +206,22 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
                   print("***** $url");
                   print("-------------------------");
 
-                  print("""    ${username.text.trim()},
-                    ${aadhar_no.text.trim()},
-                    ${email.text.trim()},
-                    ${phone.text.trim()},
-                    ${date_of_birth.text.trim()},
-                    ${gender.text.trim()},
-                    ${url},
-                    ${city.text.trim()},
-                    ${state.text.trim()},
-                    ${years_of_exp.text.trim()},
-                    ${specialization.text.trim()},
-                    ${daily_wage.text.trim()},
-                    ${monthly_wage.text.trim()},
-                    ${availablity.text.trim()},
-                    ${service_area.text.trim()},""");
+                  print("""
+                    username:    ${username.text.trim()},
+                    aadhar_no:    ${aadhar_no.text.trim()},
+                    email:   ${email.text.trim()},
+                    phone:   ${phone.text.trim()},
+                    date:     ${date_of_birth.text.trim()},
+                    gender:   ${gender.text.trim()},
+                    url:  $url,
+                    city:    ${city.text.trim()},
+                    state:  ${state.text.trim()},
+                    years:    ${years_of_exp.text.trim()},
+                    spcialization:  ${specialization.text.trim()},
+                    daily_Wage:   ${daily_wage.text.trim()},
+                    monthly_wage:   ${monthly_wage.text.trim()},
+                    availability:   ${availablity.text.trim()},
+                    service_area:   ${service_area.text.trim()},""");
 
                   print("-------------------------");
 
